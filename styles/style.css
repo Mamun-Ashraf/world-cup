@@ -4,59 +4,56 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    width: 85%;
+    margin: auto;
 }
 
 main {
-    margin-top: 50px;
-    width: 75%;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
+    margin: 50px 0px;
 }
 
 /* ------------
 Banner style
 --------------- */
-.top-banner {
-    height: 646px;
+.banner-container {
+    height: 100%;
     background-color: #1E1E1E;
     border-radius: 30px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 24px;
+    display: flex;
+
 }
 
-.banner {
+.banner-content {
     color: #FFFFFF;
     padding: 111px 0px 111px 106px;
+    width: 100%;
+    margin-right: 24px;
 }
 
-.banner-show {
-    font-size: 70px;
-    line-height: 80px;
+.banner-content h1 {
+    font-size: 4.5rem;
 }
 
-.banner-watch {
+.banner-content button {
     background-color: #DD0000;
     width: 187px;
     height: 56px;
     color: #FFFFFF;
     border-radius: 5px;
     font-size: 20px;
-    transition: transform 2s ease 0s;
+    transition: transform 1s ease 0s;
 }
 
-.banner-watch:hover {
-    transform: rotate(180deg);
+.banner-content button:hover {
+    transform: scale(2);
 }
 
-.player {
-    padding-top: 33px;
-    padding-right: 80;
+.banner-photo {
+    width: 100%;
+    padding: 45px 79px 0 0;
 }
 
-.player img {
+.banner-photo img {
     width: 581px;
     height: 613px;
 }
@@ -71,7 +68,7 @@ Menu bar and Transfer style
 
 .menu {
     width: 312px;
-    /* height: 312px; */
+    height: 312px;
     background-color: #1E1E1E;
     border-radius: 10px;
     padding: 30px;
@@ -81,8 +78,7 @@ Menu bar and Transfer style
 }
 
 .match,
-.group,
-.blog {
+.group {
     background-color: #FFFFFF;
     width: 252px;
     height: 64px;
@@ -94,21 +90,46 @@ Menu bar and Transfer style
     justify-content: center;
 }
 
-.match a {
-    text-decoration: none;
-    color: #161616;
+.blog {
+    background-color: #DD0000;
+    width: 252px;
+    height: 64px;
+    font-size: 20px;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
+.match a,
 .group a {
     text-decoration: none;
     color: #161616;
 }
 
-.blog {
-    background-color: #DD0000;
+.blog a {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
-.blog a {
+.view-all {
+    background-color: #DD0000;
+    width: 252px;
+    height: 64px;
+    font-size: 20px;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.view-all {
+    visibility: hidden;
+}
+
+.view-all a {
     text-decoration: none;
     color: #FFFFFF;
 }
@@ -118,14 +139,14 @@ Transfer style
 -------------------- */
 .transfer-live {
     flex-grow: 1;
-    width: 312px;
-    height: 362px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-left: 24px;
 }
 
 .transfer {
+    width: 312px;
+    height: 362px;
     margin-right: 24px;
     margin-bottom: 24px;
     border: 1px solid lightgray;
@@ -158,45 +179,25 @@ Transfer style
     margin-left: 30px;
 }
 
-.view-all {
-    background-color: #DD0000;
-    width: 252px;
-    height: 64px;
-    font-size: 20px;
-    line-height: 30px;
-    border-radius: 10px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-}
-
-.view-all {
-    visibility: hidden;
-}
-
-.view-all a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
 /* -----------------
 Footer style
 -------------------- */
 .goal {
-    margin-top: 532px;
+    margin-bottom: 50px;
     padding: 0px 50px;
     background-color: #1E1E1E;
     text-align: center;
     color: #FFFFFF;
     height: 400px;
-    font-size: 24px;
     display: grid;
     align-items: center;
+    font-size: 24px;
 }
 
 .goal-media {
     display: flex;
     justify-content: center;
+    font-size: 16px;
 }
 
 .fa-facebook {
@@ -215,7 +216,6 @@ Footer style
 Menu of All Groups style
 -------------------- */
 .match-1,
-.group-1,
 .blog-1 {
     background-color: #FFFFFF;
     width: 252px;
@@ -228,7 +228,8 @@ Menu of All Groups style
     justify-content: center;
 }
 
-.match-1 a {
+.match-1 a,
+.blog-1 a {
     text-decoration: none;
     color: #161616;
 }
@@ -236,6 +237,14 @@ Menu of All Groups style
 
 .group-1 {
     background-color: #DD0000;
+    width: 252px;
+    height: 64px;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 .group-1 a {
@@ -243,15 +252,9 @@ Menu of All Groups style
     color: #FFFFFF;
 }
 
-.blog-1 a {
-    text-decoration: none;
-    color: #161616;
-}
-
 /* -------------------------
  Menu of Upcoming Match Style
 ----------------------------- */
-.match-2,
 .group-2,
 .blog-2 {
     background-color: #FFFFFF;
@@ -265,24 +268,27 @@ Menu of All Groups style
     justify-content: center;
 }
 
+.group-2 a,
+.blog-2 a {
+    text-decoration: none;
+    color: #161616;
+}
+
 .match-2 {
     background-color: #DD0000;
+    width: 252px;
+    height: 64px;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 .match-2 a {
     text-decoration: none;
     color: #FFFFFF;
-}
-
-.group-2 a {
-    text-decoration: none;
-    color: #161616;
-}
-
-
-.blog-2 a {
-    text-decoration: none;
-    color: #161616;
 }
 
 /* -------------------------
@@ -308,11 +314,6 @@ Menu of All Groups style
     justify-content: space-around;
 }
 
-.transfer-1 h3,
-p {
-    margin-left: 24px;
-}
-
 /* ------------------
   Responsiveness for mobile
 --------------------- */
@@ -321,7 +322,7 @@ p {
         width: 100%;
     }
 
-    .top-banner {
+    .banner-container {
         grid-template-columns: repeat(1, 1fr);
     }
 

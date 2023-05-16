@@ -375,7 +375,7 @@ Menu of All Groups style
 /* ------------------
   Responsiveness for tab
 --------------------- */
-@media only screen and (min-width:577px) and (max-width:768px) {
+@media only screen and (min-width:577px) and (max-width:992px) {
 
     .banner-content {
         margin-right: 0;
